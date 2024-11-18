@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/jpeg" href="images/favicon.jpeg">
+    <title>Stopwatch</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    
+    
+   
+    <h1>STOP WATCH</h1>
+   
+    <div id="stopwatch">
+
+        <p><span id="hours">00</span> : <span id="minutes">00</span> : <span id="seconds">00</span></p>
+    </div>
+
+
+
+    <script type="text/javascript">
+        var hours = 0;
+        var minutes = 0;
+        var seconds = 0;
+        var startButton = document.createElement("button");
+        startButton.innerText = "start";
+        startButton.style.background="green";
+       
+        var stopButton = document.createElement("button");
+        stopButton.innerText = "stop"
+        stopButton.style.background="red"
+        var resetButton = document.createElement("button");
+        resetButton.innerText = "reset"
+        resetButton.style.background="yellow"
+
+        window.onload = function () {
+            var h = document.getElementById("hours")
+            var m = document.getElementById("minutes")
+            var s = document.getElementById("seconds")
+            var stopwatch = document.getElementById("stopwatch");
+            stopwatch.appendChild(startButton);
+            startButton.addEventListener("click", function () {
+                startButton.remove();
+                resetButton.remove();
+                stopwatch.appendChild(stopButton);
+                
+                var interval = setInterval(function () {
+                    seconds += 1;
+                    s.innerText = seconds;
+                    if (seconds == 60) {
+                        seconds = 0;
+                        minutes += 1;
+                        s.innerText = seconds;
+                        m.innerText = minutes;
+                    }
+                    if (minutes == 60) {
+                        minutes = 0;
+                        hours += 1;
+                        m.innerText == minutes;
+                        h.innerText = hours;
+                    }
+                    startButton.remove();
+                }, 1000)
+                stopButton.addEventListener("click", function () {
+                    stopButton.remove();
+                clearInterval(interval)
+                stopwatch.appendChild(startButton);
+                stopwatch.appendChild(resetButton);
+
+            })
+            resetButton.addEventListener("click",function(){
+                s.innerText="00";
+                m.innerText="00";
+                h.innerText="00";
+                resetButton.remove();
+                stopButton.remove();
+                stopwatch.appendChild(startButton);
+            })
+            })
+            
+
+
+        }
+    </script>
+</body>
+
+</html>

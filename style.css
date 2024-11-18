@@ -1,0 +1,39 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-image: url(./images/c2.webp);
+    background-size: cover;
+    
+
+    h1{
+        text-align: center;
+        margin-top: 200px;
+       margin-right: 105px;
+       color: white;
+        
+    }
+
+#stopwatch{
+    display: block;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+   margin-left: 550px;
+    
+    font-size: 2em;
+    text-align: center;
+    padding: 10px;
+   
+    border-radius: 10px;
+    
+    background: rgb(29,36,0);
+background: linear-gradient(90deg, rgba(29,36,0,1) 0%, rgba(0,188,242,1) 0%, rgba(33,119,36,1) 0%, rgba(43,223,10,1) 0%, rgba(129,213,211,1) 0%, rgba(213,236,235,1) 94%, rgba(123,227,210,1) 100%, rgba(0,228,255,1) 100%);
+}
+
+#stopwatch button{
+    border-radius: 5px;
+    padding: 2px 20px 2px 20px;
+    font-size: 1.1em;
+   cursor: pointer;
+
+}
