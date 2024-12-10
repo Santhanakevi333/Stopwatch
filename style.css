@@ -3,6 +3,9 @@ body{
     padding: 0;
     background-image: url(./images/c2.webp);
     background-size: cover;
+background-repeat: no-repeat;
+}
+    
     
 
     h1{
@@ -37,3 +40,5 @@ background: linear-gradient(90deg, rgba(29,36,0,1) 0%, rgba(0,188,242,1) 0%, rgb
    cursor: pointer;
 
 }
+
+
